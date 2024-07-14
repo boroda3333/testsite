@@ -1,0 +1,85 @@
+<nav id="column-left">
+  <div id="navigation"><span class="fa fa-bars"></span> {{ text_navigation }}</div>
+  <ul id="menu">
+    {% set i = 0 %}
+    {% for menu in menus %}
+    <li id="{{ menu.id }}">
+        {% if menu.href %}<a href="{{ menu.href }}"><i class="fa {{ menu.icon }} fw"></i> {{ menu.name }}</a>{% else %}<a href="#collapse{{ i }}" data-toggle="collapse" class="parent collapsed"><i class="fa {{ menu.icon }} fw"></i> {{ menu.name }}</a>{% endif %}
+        {% if menu.children %}
+          <ul id="collapse{{ i }}" class="collapse">
+            {% set j = 0 %}
+            {% for children_1 in menu.children %}
+              <li>{% if children_1.href %}
+                  <a href="{{ children_1.href }}">{{ children_1.name }}</a>
+                {% else %}
+                  <a href="#collapse{{ i }}-{{ j }}" data-toggle="collapse" class="parent collapsed">{{ children_1.name }}</a>
+                {% endif %}
+
+                {% if children_1.children %}
+                  <ul id="collapse{{ i }}-{{ j }}" class="collapse">
+                    {% set k = 0 %}
+                    {% for children_2 in children_1.children %}
+                      <li>{% if children_2.href %}
+                          <a href="{{ children_2.href }}">{{ children_2.name }}</a>
+                        {% else %}
+                          <a href="#collapse-{{ i }}-{{ j }}-{{ k }}" data-toggle="collapse" class="parent collapsed">{{ children_2.name }}</a>
+                        {% endif %}
+                        {% if children_2.children %}
+                          <ul id="collapse-{{ i }}-{{ j }}-{{ k }}" class="collapse">
+                            {% for children_3 in children_2.children %}
+                              <li><a href="{{ children_3.href }}">{{ children_3.name }}</a></li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}</li>
+                      {% set k = k + 1 %}
+                    {% endfor %}
+                  </ul>
+                {% endif %} </li>
+              {% set j = j + 1 %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% set i = i + 1 %}
+    {% endfor %}
+  </ul>
+
+      	<script>
+      		let frame_menu = document.querySelector('#menu-frame');
+      	
+      		if (frame_menu != null) {
+      		
+      			frame_menu.querySelector('a > i').remove();
+					
+						let frame_icon_container = document.createElement('div');
+					
+						frame_icon_container.innerHTML = '<svg width="18" height="16" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:-3px;margin-right:5px;font-size:16px;"><path fill="currentColor" style="opacity:.3" d="m 234,255.48839 c -32.32,33.1971 -75.26,-7.55884 -75.26,-7.55884 L 22.34,92.504522 A 50.000422,49.860881 0 0 1 97.93,27.217243 L 232.6,181.26611 c 0,0 38.17,36.448 1.4,74.22228 z M 60,170.72561 a 50,49.860459 0 0 1 50,49.86046 v 159.55347 a 50,49.860459 0 1 1 -100,0 V 220.58607 a 50,49.860459 0 0 1 50,-49.86046 z"></path><path fill="currentColor" d="m 60,10 h 300 a 50,50 0 0 1 0,100 H 60 A 50,50 0 1 1 60,10 Z"></path><path fill="currentColor" d="m 60,170 h 140 a 50,50 0 0 1 0,100 H 60 a 50,50 0 1 1 0,-100 z"></path><path fill="currentColor" d="M 60,330 A 50,50 0 1 1 10,380 50,50 0 0 1 60,330 Z"></path></svg>';
+					
+						frame_menu.querySelector('a[href^="#collapse"]').prepend(frame_icon_container.querySelector('svg'));
+      		}
+
+      	</script>
+      
+  <div id="stats">
+    <ul>
+      <li>
+        <div>{{ text_complete_status }} <span class="pull-right">{{ complete_status }}%</span></div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ complete_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ complete_status }}%"> <span class="sr-only">{{ complete_status }}%</span></div>
+        </div>
+      </li>
+      <li>
+        <div>{{ text_processing_status }} <span class="pull-right">{{ processing_status }}%</span></div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ processing_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ processing_status }}%"> <span class="sr-only">{{ processing_status }}%</span></div>
+        </div>
+      </li>
+      <li>
+        <div>{{ text_other_status }} <span class="pull-right">{{ other_status }}%</span></div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{ other_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ other_status }}%"> <span class="sr-only">{{ other_status }}%</span></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
