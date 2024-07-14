@@ -1,0 +1,444 @@
+2024-07-10 18:26:36 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: Tweak 152 FZ for OpenCart 3x Russkaya sborka
+
+FILE: catalog/controller/information/contact.php
+CODE: if (isset($this->error['name'])) {
+LINE: 48
+CODE: $data['comment'] = $this->config->get('config_comment');
+LINE: 106
+CODE: return !$this->error;
+LINE: 205
+
+FILE: catalog/view/theme/default/template/information/contact.twig
+CODE: <div class="row">{{ column_left }}
+LINE: 12
+CODE: <div class="buttons">
+LINE: 154
+CODE: </form>
+LINE: 162
+
+FILE: catalog/view/theme/ft_frame/template/information/contact.twig
+CODE: <div class="row">{{ column_left }}
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 3x Russkaya sborka
+
+FILE: admin/view/template/common/header.twig
+CODE: {% for link in links %}
+LINE: 36
+CODE: <li><a href="https://www.opencart.com" target="_blank"><i class="fa fa-opencart fa-fw"></i> {{ text_homepage }}</a></li>
+LINE: 61
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><i class="fa fa-file-text-o fa-fw"></i> {{ text_documentation }}</a></li>
+LINE: 64
+CODE: <li><a href="https://forum.opencart.com" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {{ text_support }}</a></li>
+LINE: 67
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="{{ help_sku }}">{{ entry_sku }}</span></label>
+LINE: 104
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 110
+CODE: <label class="col-sm-2 control-label" for="input-location">{{ entry_location }}</label>
+LINE: 150
+CODE: <input type="text" name="model" value="{{ model }}" placeholder="{{ entry_model }}" id="input-model" class="form-control"/>
+LINE: 97
+CODE: <li><a href="#tab-recurring" data-toggle="tab">{{ tab_recurring }}</a></li>
+LINE: 32
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 133
+CODE: $pagination = new Pagination();
+LINE: 194
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 260
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 344
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: {% for image in images|batch(4) %}
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+
+FILE: admin/view/template/marketplace/marketplace_list.twig
+CODE: {% if license.value == filter_license %}<a href="{{ license.href }}" class="btn btn-default active">{{ license.text }}</a>{% else %}<a href="{{ license.href }}" class="btn btn-default">{{ license.text }}</a>{% endif %}
+LINE: 49
+
+FILE: admin/view/template/marketplace/installer.twig
+CODE: <legend>{{ text_upload }}</legend>
+LINE: 27
+
+FILE: admin/model/localisation/currency.php
+CODE: public function refresh($force = false) {
+LINE: 107
+CODE: public function getTotalCurrencies() {
+LINE: 209
+
+FILE: admin/controller/extension/extension/promotion.php
+CODE: $curl = curl_init();
+LINE: 6
+
+FILE: admin/view/template/common/developer.twig
+CODE: <td style="width: 150px;">{{ entry_cache }}</td>
+LINE: 11
+
+FILE: admin/controller/design/layout.php
+CODE: public function edit() {
+LINE: 49
+
+FILE: admin/view/template/design/layout_form.twig
+CODE: <h1>{{ heading_title }}</h1>
+LINE: 7
+
+FILE: catalog/controller/mail/affiliate.php
+CODE: $customer_group_id = $args[1]['customer_group_id'];
+LINE: 16
+LINE: 72
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: "summernote" data-lang="{{ language.locale }}"
+LINE: 55
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: "summernote" data-lang="{{ language.locale }}"
+LINE: 52
+
+FILE: (sub modification) admin/view/template/catalog/product_form.twig
+CODE: "summernote" data-lang="{{ language.locale }}"
+LINE: 60
+
+FILE: admin/view/template/extension/module/html.twig
+CODE: "summernote" data-lang="{{ language.locale }}"
+LINE: 54
+----------------------------------------------------------------
+MOD: Frame: Modification
+
+FILE: catalog/controller/event/theme.php
+CODE: $theme = $this->config->get('theme_default_directory');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $directory = $this->config->get('theme_default_directory');
+LINE: 14
+
+FILE: catalog/controller/common/home.php
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 22
+
+FILE: catalog/controller/product/product.php
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 472
+LINE: 550
+
+FILE: catalog/controller/common/header.php
+CODE: $this->load->language('common/header');
+LINE: 179
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 188
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 193
+CODE: $this->load->model('setting/extension');
+LINE: 14
+
+FILE: (sub modification) catalog/controller/common/home.php
+CODE: $data['column_left'] = $this->load->controller('common/column_left');
+LINE: 38
+
+FILE: catalog/controller/common/footer.php
+CODE: $data['scripts'] = $this->document->getScripts('footer');
+LINE: 86
+
+FILE: catalog/controller/extension/module/special.php
+CODE: $this->load->model('catalog/product');
+LINE: 68
+CODE: $data['products'][] = array(
+LINE: 122
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: $this->load->model('catalog/product');
+LINE: 68
+CODE: $data['products'][] = array(
+LINE: 115
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $this->load->model('catalog/product');
+LINE: 68
+CODE: $data['products'][] = array(
+LINE: 122
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: $this->load->model('catalog/product');
+LINE: 68
+CODE: $data['products'][] = array(
+LINE: 115
+
+FILE: (sub modification) catalog/controller/extension/module/special.php
+CODE: $image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']);
+LINE: 93
+CODE: $data['products'][] = array(
+LINE: 129
+
+FILE: (sub modification) catalog/controller/extension/module/latest.php
+CODE: $image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']);
+LINE: 86
+CODE: $data['products'][] = array(
+LINE: 122
+
+FILE: (sub modification) catalog/controller/extension/module/bestseller.php
+CODE: $image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']);
+LINE: 86
+CODE: $data['products'][] = array(
+LINE: 122
+
+FILE: (sub modification) catalog/controller/extension/module/featured.php
+CODE: $image = $this->model_tool_image->resize($product_info['image'], $setting['width'], $setting['height']);
+LINE: 93
+CODE: $data['products'][] = array(
+LINE: 129
+
+FILE: catalog/controller/extension/module/carousel.php
+CODE: $this->document->addScript('catalog/view/javascript/jquery/swiper/js/swiper.jquery.js');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/swiper/css/swiper.min.css');
+LINE: 8
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/swiper/css/opencart.css');
+LINE: 11
+CODE: $data['banners'][] = array(
+LINE: 27
+
+FILE: catalog/controller/extension/module/slideshow.php
+CODE: $this->document->addScript('catalog/view/javascript/jquery/swiper/js/swiper.jquery.js');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/swiper/css/swiper.min.css');
+LINE: 8
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/swiper/css/opencart.css');
+LINE: 11
+CODE: $data['banners'][] = array(
+LINE: 27
+
+FILE: catalog/controller/extension/module/banner.php
+CODE: $this->document->addScript('catalog/view/javascript/jquery/swiper/js/swiper.jquery.js');
+NOT FOUND - OPERATION SKIPPED!
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/swiper/css/swiper.min.css');
+LINE: 8
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/swiper/css/opencart.css');
+LINE: 11
+CODE: $data['banners'][] = array(
+LINE: 27
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $data['breadcrumbs'] = array();
+LINE: 21
+
+FILE: catalog/controller/product/special.php
+CODE: $this->load->model('tool/image');
+LINE: 139
+CODE: if ($result['image']) {
+LINE: 230
+CODE: $data['products'][] = array(
+LINE: 387
+CODE: $data['products'][] = array(
+LINE: 400
+CODE: $pagination = new Pagination();
+LINE: 520
+CODE: $data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($product_total - $limit)) ? $product_total : ((($page - 1) * $limit) + $limit), $product_total, ceil($product_total / $limit));
+LINE: 531
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: $this->load->model('tool/image');
+LINE: 193
+CODE: if ($result['image']) {
+LINE: 301
+CODE: $data['products'][] = array(
+LINE: 458
+CODE: $data['products'][] = array(
+LINE: 471
+CODE: $pagination = new Pagination();
+LINE: 591
+CODE: $data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($product_total - $limit)) ? $product_total : ((($page - 1) * $limit) + $limit), $product_total, ceil($product_total / $limit));
+LINE: 602
+
+FILE: catalog/controller/product/search.php
+CODE: $this->load->model('tool/image');
+LINE: 141
+CODE: if ($result['image']) {
+LINE: 338
+CODE: $data['products'][] = array(
+LINE: 495
+CODE: $data['products'][] = array(
+LINE: 508
+CODE: $pagination = new Pagination();
+LINE: 688
+CODE: $data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($product_total - $limit)) ? $product_total : ((($page - 1) * $limit) + $limit), $product_total, ceil($product_total / $limit));
+LINE: 699
+
+FILE: catalog/controller/product/category.php
+CODE: $this->load->model('tool/image');
+LINE: 141
+CODE: if ($result['image']) {
+LINE: 312
+CODE: $data['products'][] = array(
+LINE: 469
+CODE: $data['products'][] = array(
+LINE: 482
+CODE: $pagination = new Pagination();
+LINE: 614
+CODE: $data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($product_total - $limit)) ? $product_total : ((($page - 1) * $limit) + $limit), $product_total, ceil($product_total / $limit));
+LINE: 625
+
+FILE: (sub modification) catalog/controller/product/category.php
+CODE: $data['categories'][] = array(
+LINE: 297
+CODE: $data['categories'][] = array(
+LINE: 305
+CODE: $this->response->setOutput($this->load->view('product/category', $data));
+LINE: 703
+
+FILE: (sub modification) catalog/controller/product/manufacturer.php
+CODE: $data['description'] = html_entity_decode($manufacturer_info['description'], ENT_QUOTES, 'UTF-8');
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
+LINE: 238
+CODE: $this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
+LINE: 241
+CODE: $this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
+LINE: 241
+CODE: $this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
+LINE: 244
+CODE: $data['breadcrumbs'] = array();
+LINE: 171
+CODE: if ($product_info) {
+LINE: 374
+CODE: $data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
+LINE: 482
+CODE: $data['images'] = array();
+LINE: 644
+CODE: 'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_additional_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_additional_height'))
+LINE: 651
+CODE: $data['images'][] = array(
+LINE: 660
+CODE: $data['products'][] = array(
+LINE: 868
+CODE: $data['products'][] = array(
+LINE: 878
+CODE: $product_option_value_data[] = array(
+LINE: 720
+CODE: $this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
+LINE: 446
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
+LINE: 449
+CODE: $this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment/moment.min.js');
+LINE: 452
+CODE: $this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment/moment-with-locales.min.js');
+LINE: 455
+CODE: $this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
+LINE: 458
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
+LINE: 461
+CODE: $pagination = new Pagination();
+LINE: 1052
+CODE: $this->load->model('tool/image');
+LINE: 509
+
+FILE: catalog/controller/account/return.php
+CODE: $this->load->language('account/return');
+LINE: 14
+LINE: 92
+LINE: 227
+LINE: 525
+CODE: $this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment/moment.min.js');
+LINE: 238
+CODE: $this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment/moment-with-locales.min.js');
+LINE: 241
+CODE: $this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
+LINE: 244
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
+LINE: 247
+
+FILE: catalog/controller/account/wishlist.php
+CODE: $this->load->model('tool/image');
+LINE: 27
+CODE: $image = $this->model_tool_image->resize($product_info['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_wishlist_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_wishlist_height'));
+LINE: 81
+CODE: $data['products'][] = array(
+LINE: 111
+CODE: $json = array();
+LINE: 145
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 169
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 184
+
+FILE: catalog/controller/account/download.php
+CODE: $pagination = new Pagination();
+LINE: 81
+
+FILE: catalog/controller/product/compare.php
+CODE: $this->load->model('tool/image');
+LINE: 19
+CODE: $image = $this->model_tool_image->resize($product_info['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_compare_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_compare_height'));
+LINE: 77
+CODE: $data['products'][$product_id] = array(
+LINE: 117
+CODE: $json = array();
+LINE: 169
+CODE: $json['total'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
+LINE: 199
+
+FILE: (sub modification) admin/view/template/design/layout_form.twig
+CODE: </form>
+LINE: 802
+
+FILE: admin/controller/common/column_left.php
+CODE: $catalog = array();
+LINE: 61
+
+FILE: admin/view/template/common/column_left.twig
+CODE: <div id="stats">
+LINE: 62
+----------------------------------------------------------------
